@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Meeting</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+  
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>New Meeting Bar</h1>
+            <p>Vanchiglietta spacca</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#chi-siamo">Chi Siamo</a></li>
+            <li><a href="#atmosfera">L'Atmosfera</a></li>
+            <li><a href="#specialita">Le Specialità</a></li>
+            <li><a href="#contatti">Vieni a trovarci</a></li>
+        </ul>
+    </nav>
+
+    <section id="chi-siamo" class="container">
+        <h2 class="section-title reveal">Benvenuti a Casa</h2>
+        <p class="section-subtitle reveal">BIRRA.</p>
+        
+        <div class="grid-layout">
+            <div class="text-block reveal">
+                <h3>La nostra storia</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam sint, non placeat odit earum blanditiis inventore ex, temporibus voluptatibus similique repudiandae quia saepe qui praesentium, error ad deserunt provident.</p>
+                <br>
+                <p>Non siamo solo un bar</p>
+            </div>
+            <div class="image-block reveal">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop" alt="Interno del bar">
+            </div>
+        </div>
+    </section>
+
+    <section id="atmosfera" style="background-color: #fff;">
+        <div class="container">
+            <h2 class="section-title reveal">L'atmosfera</h2>
+            
+            <div class="grid-layout">
+                <div class="image-block reveal">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop" alt="Caffè e giornale">
+                </div>
+                <div class="image-block reveal">
+                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1974&auto=format&fit=crop" alt="Aperitivo serale">
+                </div>
+                <div class="image-block reveal">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?q=80&w=2071&auto=format&fit=crop" alt="Amici al tavolo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specialita" class="container">
+        <div class="grid-layout">
+            <div class="image-block reveal">
+                <img src="https://images.unsplash.com/photo-1612528443702-f6741f70a049?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Birre su bancone bar">
+            </div>
+            <div class="text-block reveal">
+                <h3>Colazioni e Aperitivi</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore animi accusamus et sint vitae dolorum quisquam, deleniti eos. Voluptatibus fugiat temporibus ipsum dolores? Eum veniam fuga quaerat doloremque quibusdam earum!</p>
+                <br>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui aspernatur nemo recusandae vero sequi dolorem fugit incidunt vitae? Aliquid architecto labore expedita amet autem! Aliquam accusantium similique magni atque ducimus.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contatti">
+        <h3>New Meeting</h3>
+        <p>Corso Chieti, 2, 10153 Torino</p>
+        <p>Tel: 011 428 2289 | email </p>
+        <br>
+        <p>© 2026 New Meeting.</p>
+    </footer>
+
+    <script>
+        
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150; 
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    // Opzionale: togliere l'else se vuoi che l'animazione avvenga solo una volta
+                    // reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        
+        window.addEventListener("scroll", reveal);
+
+        
+        reveal();
+    </script>
+</body>
+</html>
